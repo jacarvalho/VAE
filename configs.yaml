@@ -1,0 +1,10 @@
+---
+dataset: 'mnist'
+latent_dim: 15
+batch_size: 128
+epochs: 25
+lr: 0.001
+use_cuda: true
+seed: 57
+log_interval: 100
+results_dir: 'results'
