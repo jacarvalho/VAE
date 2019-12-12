@@ -212,7 +212,8 @@ class VAE:
             # Project and plot
             tsne = TSNE(n_components=2)
             z_batch_pc = tsne.fit_transform(z_batch)
-            sctr = ax.scatter(z_batch_pc[:, 0], z_batch_pc[:, 1], c=y_batch, cmap='Accent', alpha=0.25)
+            cmap = plt.get_cmap('hsv', np.max(y_batch) - np.min(y_batch) + 1)
+            sctr = ax.scatter(z_batch_pc[:, 0], z_batch_pc[:, 1], c=y_batch, alpha=0.5, cmap=cmap)
             plt.colorbar(sctr, ax=ax, format='%d')
             ax.set_xlabel('z1')
             ax.set_ylabel('z2')
